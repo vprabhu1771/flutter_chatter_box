@@ -41,7 +41,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           if (user != null) ...[
             UserAccountsDrawerHeader(
-              accountName: Text("User Name"),
+              accountName: Text(user.userMetadata?['name'] ?? "User Name"),
               accountEmail: Text(user.email ?? "No Email"),
               currentAccountPicture: CircleAvatar(
                 child: Icon(Icons.person, size: 40),
