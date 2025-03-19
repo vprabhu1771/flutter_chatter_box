@@ -38,6 +38,7 @@ dependencies:
   flutter_dotenv: ^5.2.1
   flutter_secure_storage: ^9.2.4
   fluttertoast: ^8.2.12
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
