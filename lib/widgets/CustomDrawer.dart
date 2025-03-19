@@ -6,6 +6,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import '../screens/HomeScreen.dart';
 import '../screens/auth/LoginScreen.dart';
+import '../screens/auth/ProfileScreen.dart';
 import '../screens/auth/RegisterScreen.dart';
 
 final supabase = Supabase.instance.client;
@@ -52,6 +53,19 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(context, '/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.contacts),
+              title: Text('Profile'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  parentContext,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(title: 'Profile'),
+                  ),
+                );
               },
             ),
             ListTile(
