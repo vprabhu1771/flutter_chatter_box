@@ -44,7 +44,8 @@ class CustomDrawer extends StatelessWidget {
               accountName: Text(user.userMetadata?['name'] ?? "User Name"),
               accountEmail: Text(user.email ?? "No Email"),
               currentAccountPicture: CircleAvatar(
-                child: Icon(Icons.person, size: 40),
+                // child: Icon(Icons.person, size: 40),
+                backgroundImage: NetworkImage(user?.userMetadata?['image_path'] ?? 'https://gravatar.com/avatar/${user!.email}'),
               ),
             ),
             ListTile(
