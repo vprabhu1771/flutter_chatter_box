@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+
 import '../widgets/CustomDrawer.dart';
+import 'NewChatScreen.dart';
+
 
 class HomeScreen extends StatefulWidget {
 
@@ -12,6 +18,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final supabase = Supabase.instance.client;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +27,17 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(widget.title),
       ),
       drawer: CustomDrawer(parentContext: context),
-      body: Center(
-        child: Text(widget.title),
+      body:Center(
+        child: Text("Home"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => NewChatScreen(title: 'New Chat')),
+          );
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
